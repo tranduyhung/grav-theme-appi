@@ -1,0 +1,34 @@
+<div class="level level-services no-border">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                <h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">{{ page.header.heading }}</h1>
+                <h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">{{ page.header.subheading }}</h2>
+            </div>
+        </div>
+
+        <div class="row mb-60 xs-mb-20">
+            {% for service in page.header.services %}
+            {% if loop.index == 1 %}
+            <div class="row mb-60 xs-mb-20">
+            {% elseif (loop.index - 1) % 2 == 0 %}
+            <div class="row xs-mb-20">
+            {% endif %}
+                {% if (loop.index - 1) % 2 == 0 %}
+                <div class="col-sm-6 col-lg-4 col-lg-offset-2 xs-mb-20">
+                {% else %}
+                <div class="col-sm-6 col-lg-4">
+                {% endif %}
+                    <div class="has-icon">
+                        <i class="icon {{ service.icon }}"></i>
+                        <h3 class="mb-25 md-mb-10">{{ service.title }}</h3>
+                        <p class="smaller">{{ service.description }}</p>
+                    </div>
+                </div>
+            {% if (loop.index - 1) % 2 == 1 %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

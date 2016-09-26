@@ -1,0 +1,49 @@
+{% block head %}
+<title>{% if header.title %}{{ header.title }} {% else %} {{ site.title }} {% endif %}</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+{% for meta in page.metadata %}
+    {% if meta.name != 'generator' %}
+    <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
+    {% endif %}
+{% endfor %}
+
+{% if header.robots %}
+<meta name="robots" content="{{ header.robots }}">
+{% endif %}
+
+{% if theme_config.favicon != '' %}
+<link rel="icon" href="{{ url('theme://img/' ~ theme_config.favicon, true) }}" />
+{% endif %}
+
+{% block stylesheets %}
+    {% do assets.add('theme://css/main.css') %}
+    {% for p in page.children %}
+        {% if p.name == 'sliders.md' %}
+            {% do assets.addCss('theme://css/owl.carousel.css') %}
+        {% endif %}
+    {% endfor %}
+
+    {% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
+        {% do assets.addCss('theme://css/ie.css') %}
+    {% endif %}
+{% endblock %}
+
+{{ assets.css() }}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/vendor/modernizr.js') %}
+    {% do assets.addJs('theme://js/vendor/respond.min.js') %}
+    {% do assets.addJs('//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', {'group':'bottom'}) %}
+    {% set jQueryInline = 'window.jQuery || document.write(\'<script src="' ~ url('theme://js/vendor/jquery-1.11.1.min.js') ~ '"><\\/script>\');' %}
+    {% do assets.addInlineJs(jQueryInline, {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/main.js', {'group':'bottom'}) %}
+{% endblock %}
+
+{{ assets.js() }}
+
+{% endblock head %}

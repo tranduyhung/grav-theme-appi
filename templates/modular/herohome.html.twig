@@ -1,0 +1,42 @@
+{% if page.header.background_image %}
+    {% set backgroundImage = 'background-image: url(' ~ page.media.images[page.header.background_image].url() ~ ');' %}
+{% else %}
+    {% set backgroundImage = '' %}
+{% endif %}
+
+<div class="level level-hero has-hint hero-home" style="{{ backgroundImage }}">
+    {% if page.header.video_webm or page.header.video_mp4 %}
+    <div class="hero-overlay visible-lg"></div>
+
+    <video loop id="bg-video" class="fullscreen-video">
+        {% if page.header.video_webm %}
+        <source src="{{ page.header.video_webm }}" type="video/webm">
+        {% endif %}
+        {% if page.header.video_mp4 %}
+        <source src="{{ page.header.video_mp4 }}" type="video/mp4">
+        {% endif %}
+    </video>
+    {% endif %}
+
+    <div class="container full-height">
+        <div class="v-align-parent">
+            <div class="v-center">
+                <div class="row">
+                    <div class="col-xs-10 col-sm-6">
+                        <h1 class="mb-10 heading">{{ page.header.heading }}</h1>
+                        <div class="mb-30 xs-mb-20">{{ page.header.subheading }}</div>
+                    </div>
+                </div>
+                <div>
+                    {% for button in page.header.buttons %}
+                    <a class="btn btn-prepend{% if button.classes %} {{ button.classes }}{% endif %}" href="{{ button.url }}">
+                        <i class="prepended {{ button.icon }}"></i>{{ button.text }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class=hint-arrow></div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{% if page.header.background_image %}
+    {% set backgroundImage = ' style="background-image: url(' ~ page.media.images[page.header.background_image].url() ~ ')";' %}
+{% else %}
+    {% set backgroundImage = '' %}
+{% endif %}
+
+<div class="level level-hero hero-careers has-hint">
+    <div class="container full-height"{{ backgroundImage }}>
+        <div class="v-align-parent">
+            <div class="v-center">
+                <div class="row">
+                    <div class="col-sm-6 col-md-5">
+                        <h1 class="mb-30 xs-mb-10 scaled">{{ page.header.heading }}</h1>
+                        <p class="mb-30 xs-mb-20">{{ page.header.subheading }}</p>
+                        <p>
+                            {% for button in page.header.buttons %}
+                            <a class="btn btn-prepend{% if button.classes %} {{ button.classes }}{% endif %}" href="{{ button.url }}">
+                                <i class="prepended {{ button.icon }}"></i>{{ button.text }}
+                            </a>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="hint-arrow hint-arrow-contrast"></div>
+</div>

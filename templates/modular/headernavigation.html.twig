@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="container rel text-left">
+        <a href="{{ base_url == '' ? '/' : base_url }}" class="brand brand-color">{{ site.title }}</a>
+        <nav class=nav>
+            <ul>
+                {% for p in grav.pages.root.children %}
+                <li{% if (p.active or p.activeChild) %} class="active"{% endif %}>
+                    <a href="{{ p.url }}">{{ p.menu }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+</div>

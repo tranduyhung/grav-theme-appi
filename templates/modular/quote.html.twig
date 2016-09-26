@@ -1,0 +1,17 @@
+<div class="level level-quote">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                {{ page.media.images[page.header.image].html() }}
+            </div>
+            <div class="col-md-6">
+                <h2 class="quote-heading">{{ page.header.heading }}</h2>
+                <blockquote>
+                    {{ page.content }}
+                </blockquote>
+
+                <p>{{ page.header.name }}</p>
+            </div>
+        </div>
+    </div>
+</div>

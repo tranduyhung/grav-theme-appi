@@ -1,0 +1,40 @@
+{% extends 'forms/default/field.html.twig' %}
+
+{% block field %}
+    {% block contents %}
+        {% block group %}
+            {% block input %}
+                {% block prepend %}{% endblock prepend %}
+                <input
+                    {# required attribute structures #}
+                    name="{{ (scope ~ field.name)|fieldName }}"
+                    value="{{ value|join(', ')|e('html_attr') }}"
+                    {# input attribute structures #}
+                    {% block input_attributes %}
+                        {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
+                        {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
+                        {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
+                        {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
+                        {% if field.placeholder %}placeholder="{{ field.placeholder|t }}"{% endif %}
+                        {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
+                        {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
+                        {% if field.readonly in ['on', 'true', 1] %}readonly="readonly"{% endif %}
+                        {% if field.autocomplete in ['on', 'off'] %}autocomplete="{{ field.autocomplete }}"{% endif %}
+                        {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
+                        {% if field.validate.pattern %}pattern="{{ field.validate.pattern|e }}"{% endif %}
+                        {% if field.validate.message %}title="{{ field.validate.message|t|e }}"
+                        {% elseif field.title is defined %}title="{{ field.title|t|e }}" {% endif %}
+                    {% endblock %}
+                />
+                {% block append %}{% endblock append %}
+                {% if form.inline_errors and errors %}
+                    <div class="form-errors">
+                        {% for error in errors %}
+                            <p class="form-message"><i class="fa fa-exclamation-circle"></i> {{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endblock %}
+        {% endblock %}
+    {% endblock %}
+{% endblock %}

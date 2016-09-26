@@ -1,0 +1,34 @@
+<div class="level level-img-right">
+    <div class="container xs-mb-30">
+        {% if page.header.image %}
+            {{ page.media.images[page.header.image].html('', '', 'img-right-sprite') }}
+        {% endif %}
+        <div class="row mb-60 xs-mb-20">
+            <div class="col-sm-6 col-lg-offset-1 col-lg-5">
+                <h1 class="mb-20 xs-mb-10 heading color-dark heading-bordered xl-heading-outdent">{{ page.header.heading }}</h1>
+                <h2 class="w-300 color-dark mb-10">{{ page.header.subheading }}</h2>
+                <p class=xs-mw>{{ page.content }}</p>
+            </div>
+        </div>
+
+
+    {% if page.header.image_mobile %}
+        <div class="visible-xs xs-mw xs-mb-40">
+            {{ page.media.images[page.header.image_mobile].html() }}
+        </div>
+    {% endif %}
+
+    {% for detail in page.header.details %}
+        <div class="row mb-60 xs-mb-20">
+            <div class="col-sm-1 col-lg-offset-1">
+                <i class="icon {{ detail.icon }}"></i>
+            </div>
+            <div class="col-sm-4 col-md-3">
+                <h3 class="mb-15">{{ detail.title }}</h3>
+                <p class="smaller xs-mw">{{ detail.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
+</div>

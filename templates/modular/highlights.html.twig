@@ -1,0 +1,39 @@
+<div class=level>
+    <div class="container mb-100 xs-mb-40">
+        <div class=row>
+            <div class="col-sm-5 col-md-4 col-md-offset-2 col-sm-offset-1">
+                <h1 class="mb-10 xs-mb-10 heading color-dark heading-bordered">{{ page.header.heading }}</h1>
+            </div>
+            <div class="col-sm-5 col-sm-offset-1">
+                <h2 class="w-300 color-dark mb-10 xs-mb-10">{{ page.header.subheading }}</h2>
+                <p class="xs-mw">{{ page.content }}</p>
+            </div>
+        </div>
+    </div>
+
+    {% if page.header.image %}
+        {{ page.media.images[page.header.image].html('', '', 'mb-80 hidden-xs iphone-inline') }}
+    {% endif %}
+
+    {% if page.header.highlights|length > 0 %}
+    <div class=container>
+        {% for highlight in page.header.highlights %}
+        {% if loop.index == 1 %}
+        <div class="row mb-90 xs-mb-0">
+        {% elseif (loop.index - 1) % 2 == 0 %}
+        <div class="row">
+        {% endif %}
+            <div class="col-sm-1{% if (loop.index - 1) % 2 == 0 %} col-sm-offset-2{% endif %}">
+                <i class="icon {{ highlight.icon }}"></i>
+            </div>
+            <div class="col-sm-3">
+                <h3 class="mb-15">{{ highlight.title }}</h3>
+                <p class="smaller xs-mb-40 xs-mw">{{ highlight.description }}</p>
+            </div>
+        {% if (loop.index - 1) % 2 == 1 %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

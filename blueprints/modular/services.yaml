@@ -1,0 +1,40 @@
+title: Services
+'@extends':
+  type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+          fields:
+            header.heading:
+              type: text
+              label: Heading
+              help: Section's heading.
+            header.subheading:
+              type: text
+              label: Sub-heading
+              help: Section's sub-heading.
+            header.services:
+              type: list
+              label: Details
+              help: Details.
+              fields:
+                .icon:
+                  type: text
+                  label: Icon
+                  help: Icon's CSS class. Example: icon-globe.
+                  placeholder: Example: icon-globe
+                .title:
+                  type: text
+                  label: Title
+                  help: Title.
+                .description:
+                  type: textarea
+                  label: Description
+                  help: Description.

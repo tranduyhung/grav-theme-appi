@@ -1,0 +1,7 @@
+<div class="footer text-center">
+    <p class="fmenu">
+        {% for p in grav.pages.root.children %}
+        <a href="{{ p.url }}">{{ p.menu }}</a>{% if loop.index < pages.children.visible|length %} | {% endif %}
+        {% endfor %}
+    </p>
+</div>

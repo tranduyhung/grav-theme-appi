@@ -1,0 +1,22 @@
+title: Quote
+'@extends':
+  type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+          fields:
+            header.heading:
+              type: text
+              label: Heading
+              help: Section's heading.
+            header.name:
+              type: text
+              label: Name
+              help: Name of the person how gave the quote.

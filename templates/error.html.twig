@@ -1,0 +1,20 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {% include 'modular/headernavigation.html.twig' %}
+
+    <div class="level no-border">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+                    <h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">
+                        {{ 'ERROR'|t }} {{ page.header.http_response_code }}
+                    </h1>
+                    <h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">
+                        {{ page.content }}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

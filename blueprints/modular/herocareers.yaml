@@ -1,0 +1,45 @@
+title: Hero
+'@extends':
+  type: default
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+      fields:
+        content:
+          type: tab
+          title: PLUGIN_ADMIN.CONTENT
+          fields:
+            header.heading:
+              type: text
+              label: Heading
+              help: Section's heading.
+            header.subheading:
+              type: text
+              label: Sub-heading
+              help: Section's sub-heading.
+            header.background_image:
+              type: text
+              label: Background Image
+              help: File name of an background image which exists in page folder. This image is only visible if background video is used.
+              placeholder: For example: myimage.jpg
+            header.buttons:
+              type: list
+              label: Buttons
+              help: Buttons to link to other pages.
+              fields:
+                .icon:
+                  type: text
+                  label: Icon
+                  help: Icon's CSS class. Example: icon-globe.
+                  placeholder: Example: icon-globe
+                .text:
+                  type: text
+                  label: Text
+                  help: Button's label.
+                .url:
+                  type: text
+                  label: URL
+                  help: Button's URL.
