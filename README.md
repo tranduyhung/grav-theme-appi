@@ -48,7 +48,7 @@ Here is the list of available sub-pages in the theme.
 
 ![](screenshots/herohome.jpg)
 
-**herohome** creates a hero section with background video or background image. If background video is provided, background image is used as a fallback when background video can't be played or if we are on mobile devices. If only background video is not provided, background image is used instead.
+**herohome** creates a hero section with background video or background image. If background video is provided, background image is used as a fallback when background video can't be played or if we are on mobile devices. If only background video is provided, background image is used instead.
 
 This sub-page has heading, sub-heading and buttons.
 
