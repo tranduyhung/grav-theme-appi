@@ -2,15 +2,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center">
-                {{ page.media.images[page.header.image].html() }}
+                {{ page.media.images[page.header.image].html()|raw }}
             </div>
             <div class="col-md-6">
-                <h2 class="quote-heading">{{ page.header.heading }}</h2>
+                <h2 class="quote-heading">{{ page.header.heading|raw }}</h2>
                 <blockquote>
-                    {{ page.content }}
+                    {{ page.content|raw }}
                 </blockquote>
 
-                <p>{{ page.header.name }}</p>
+                <p>{{ page.header.name|raw }}</p>
             </div>
         </div>
     </div>

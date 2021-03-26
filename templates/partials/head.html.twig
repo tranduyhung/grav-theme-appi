@@ -31,7 +31,7 @@
     {% endif %}
 {% endblock %}
 
-{{ assets.css() }}
+{{ assets.css()|raw }}
 
 {% block javascripts %}
     {% do assets.addJs('theme://js/vendor/modernizr.js') %}
@@ -44,6 +44,6 @@
     {% do assets.addJs('theme://js/main.js', {'group':'bottom'}) %}
 {% endblock %}
 
-{{ assets.js() }}
+{{ assets.js()|raw }}
 
 {% endblock head %}

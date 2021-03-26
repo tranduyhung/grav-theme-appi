@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-                <h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">{{ page.header.heading }}</h1>
-                <h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">{{ page.header.subheading }}</h2>
+                <h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">{{ page.header.heading|raw }}</h1>
+                <h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">{{ page.header.subheading|raw }}</h2>
             </div>
         </div>
 
@@ -21,8 +21,8 @@
                 {% endif %}
                     <div class="has-icon">
                         <i class="icon {{ service.icon }}"></i>
-                        <h3 class="mb-25 md-mb-10">{{ service.title }}</h3>
-                        <p class="smaller">{{ service.description }}</p>
+                        <h3 class="mb-25 md-mb-10">{{ service.title|raw }}</h3>
+                        <p class="smaller">{{ service.description|raw }}</p>
                     </div>
                 </div>
             {% if (loop.index - 1) % 2 == 1 %}
