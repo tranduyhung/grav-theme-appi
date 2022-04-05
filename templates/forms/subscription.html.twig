@@ -2,11 +2,9 @@
 
 {% block inner_markup_fields_start %}
 <div class="h2 mb-20">{{ heading }}</div>
-<p class="mb-35">{{ content }}</p>
-<div class="btn-append dropdown-prepend">
+{{ content|raw }}
+<div class="btn-append dropdown-prepend" style="margin-top: 35px;">
 {% endblock %}
 
-{% block inner_markup_buttons_end %}
-</div>
-</div>
-{% endblock %}
+
+

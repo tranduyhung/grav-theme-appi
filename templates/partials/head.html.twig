@@ -31,7 +31,7 @@
     {% endif %}
 {% endblock %}
 
-{{ assets.css() }}
+{{ assets.css()|raw }}
 
 {% block javascripts %}
     {% do assets.addJs('theme://js/vendor/modernizr.js') %}
@@ -40,10 +40,11 @@
     {% set jQueryInline = 'window.jQuery || document.write(\'<script src="' ~ url('theme://js/vendor/jquery-1.11.1.min.js') ~ '"><\\/script>\');' %}
     {% do assets.addInlineJs(jQueryInline, {'group':'bottom'}) %}
     {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/dropdown.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/modal.min.js', {'group':'bottom'}) %}
     {% do assets.addJs('theme://js/main.js', {'group':'bottom'}) %}
 {% endblock %}
 
-{{ assets.js() }}
+{{ assets.js()|raw }}
 
 {% endblock head %}

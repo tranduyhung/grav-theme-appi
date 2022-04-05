@@ -1,5 +1,5 @@
 <div class="level level-outro text-center">
     <div class=container>
-        {% include "forms/subscription.html.twig" with { form: forms('subscription-form'), heading: page.header.heading, content: page.header.content } %}
+        {% include "forms/subscription.html.twig" with { form: forms('subscription-form'), heading: page.header.heading|raw, content: page.content|raw } %}
     </div>
 </div>

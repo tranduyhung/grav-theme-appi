@@ -1,8 +1,30 @@
 {% extends "forms/field.html.twig" %}
 
 {% block input %}
+<div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" id="f1" data-toggle="dropdown" aria-expanded="true">
+        <span id=option-value-f1>
+            {% for key, text in field.options %}
+                {% if loop.index == 1 %}
+                    {{ text }}
+                {% endif %}
+            {% endfor %}
+        </span>
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" data-displaytarget="#option-value-f1" data-inputtarget=".f1-target" role="menu" aria-labelledby="f1">
+        {% for key, text in field.options %}
+            {% if loop.index == 1 %}
+            {% set selected = field.selectize ? text : key %}
+            {% set item_value = field.selectize and field.multiple ? text : key %}
+                <li role="presentation" data-placeholder="{{ text }}" data-value="{{ item_value }}" class=disabled>{{ text }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+
     <select name="{{ (scope ~ field.name)|fieldName ~ (field.multiple ? '[]' : '') }}"
-            {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
+            {% if field.classes is defined %}class="{{ field.classes }} sr-only f1-target countryCode" {% else %}class="sr-only f1-target countryCode" {% endif %}
             {% if field.id is defined %}id="{{ field.id|e }}" {% endif %}
             {% if field.style is defined %}style="{{ field.style|e }}" {% endif %}
             {% if field.disabled %}disabled="disabled"{% endif %}
