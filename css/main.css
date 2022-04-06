@@ -664,7 +664,6 @@ input.text:focus {
 }
 
 .dropdown-prepend {
-	padding-left: 75px;
 	border-bottom: 1px solid #e5e5e5;
 }
 
@@ -686,7 +685,7 @@ input.text:focus {
 @media ( min-width: 768px ) {
 
 	.dropdown-prepend {
-		padding-left: 120px;
+		padding-left: 220px;
 	}
 
 }
@@ -856,13 +855,13 @@ input.text:focus {
 }
 
 .contact .text {
-	width: 130px;
+	width: 230px;
 }
 
 @media ( min-width: 768px ) {
 	
 	.contact .text {
-		width: 220px;
+		width: 320px;
 	}
 
 }
@@ -1699,11 +1698,6 @@ label {
 }
 
 .dropdown-prepend .dropdown {
-	width: 75px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
 	border: solid #e5e5e5;
 	border-width: 1px 0 0 1px;
 }
@@ -1711,7 +1705,11 @@ label {
 @media ( min-width: 768px ) {
 	
 	.dropdown-prepend .dropdown {
-		width: 120px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 220px;
 	}
 
 }
@@ -1737,13 +1735,13 @@ label {
 }
 
 .dropdown-prepend .dropdown-menu {
+	width: 100%;
 	position: absolute;
 	top: 100%;
 	left: -1px;
 	z-index: 1000;
 	display: none;
 	float: left;
-	width: 76px;
 	font-size: 13px;
 	padding: 0;
 	margin: 0;
@@ -1759,7 +1757,7 @@ label {
 
 @media ( min-width: 768px ) {
 	.dropdown-prepend .dropdown-menu {
-		width: 121px;
+		width: 221px;
 		font-size: 24px;
 		font-size: 1.091rem;
 	}
@@ -2859,4 +2857,14 @@ ol.tos li {
 		z-index: 3;
 	}
 
+}
+
+.contact .dropdown .btn,
+.contact .dropdown .btn:hover,
+.contact .dropdown .btn:focus {
+	background: none;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	outline: 0;
 }
