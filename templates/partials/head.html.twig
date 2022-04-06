@@ -20,6 +20,7 @@
 
 {% block stylesheets %}
     {% do assets.add('theme://css/main.css') %}
+    {% do assets.add('theme://css/about.css') %}
     {% for p in page.children %}
         {% if p.name == 'sliders.md' %}
             {% do assets.addCss('theme://css/owl.carousel.css') %}
@@ -29,6 +30,7 @@
     {% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
         {% do assets.addCss('theme://css/ie.css') %}
     {% endif %}
+
 {% endblock %}
 
 {{ assets.css()|raw }}
@@ -40,7 +42,8 @@
     {% set jQueryInline = 'window.jQuery || document.write(\'<script src="' ~ url('theme://js/vendor/jquery-1.11.1.min.js') ~ '"><\\/script>\');' %}
     {% do assets.addInlineJs(jQueryInline, {'group':'bottom'}) %}
     {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
-    {% do assets.addJs('theme://js/bootstrap.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/dropdown.min.js', {'group':'bottom'}) %}
+    {% do assets.addJs('theme://js/modal.min.js', {'group':'bottom'}) %}
     {% do assets.addJs('theme://js/main.js', {'group':'bottom'}) %}
 {% endblock %}
 

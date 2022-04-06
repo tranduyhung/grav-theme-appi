@@ -1,12 +1,10 @@
 {% extends 'forms/form.html.twig' %}
 
 {% block inner_markup_fields_start %}
-<div class="h2 mb-20">{{ heading|raw }}</div>
-<p class="mb-35">{{ content|raw }}</p>
-<div class="btn-append dropdown-prepend">
+<div class="h2 mb-20">{{ heading }}</div>
+{{ content|raw }}
+<div class="btn-append dropdown-prepend" style="margin-top: 35px;">
 {% endblock %}
 
-{% block inner_markup_buttons_end %}
-</div>
-</div>
-{% endblock %}
+
+

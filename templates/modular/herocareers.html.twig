@@ -1,11 +1,11 @@
 {% if page.header.background_image %}
-    {% set backgroundImage = ' style="background-image: url(' ~ page.media.images[page.header.background_image].url() ~ ')";' %}
+    {% set backgroundImage = page.media.images[page.header.background_image].cache.url() %}
 {% else %}
     {% set backgroundImage = '' %}
 {% endif %}
 
 <div class="level level-hero hero-careers has-hint">
-    <div class="container full-height"{{ backgroundImage|raw }}>
+    <div class="container full-height" style="background-image: url('{{ backgroundImage }}');">
         <div class="v-align-parent">
             <div class="v-center">
                 <div class="row">
@@ -15,7 +15,7 @@
                         <p>
                             {% for button in page.header.buttons %}
                             <a class="btn btn-prepend{% if button.classes %} {{ button.classes }}{% endif %}" href="{{ button.url }}">
-                                <i class="prepended {{ button.icon }}"></i>{{ button.text }}
+                                <i class="prepended {{ button.icon }}"></i>{{ button.text|raw }}
                             </a>
                             {% endfor %}
                         </p>
