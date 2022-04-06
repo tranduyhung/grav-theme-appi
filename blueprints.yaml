@@ -1,13 +1,13 @@
 name: Appi
 description: "Grav theme based on Appi HTML theme of blacktie.co."
-version: 1.0.1
+version: 2.0.0
 icon: mobile
 author:
   name: Hung Tran
-  email: hungtran@peaceofmindwebsite.com
-  url: http://www.peaceofmindwebsite.com
+  email: flatfiledeveloper@gmail.com
+  url: https://flatfiledeveloper.com
 homepage: https://github.com/tranduyhung/grav-theme-appi
-demo: http://www.peaceofmindwebsite.com/skeletons/appi
+demo: https://grav-theme-appi.flatfiledeveloper.com/
 keywords: theme, template, blacktie, responsive, html5, mobile, phone, tablet, app, application, store, bootstrap
 bugs: https://github.com/tranduyhung/grav-theme-appi/issues
 license: MIT
