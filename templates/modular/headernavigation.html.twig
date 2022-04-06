@@ -1,6 +1,6 @@
 <div class="header">
     <div class="container rel text-left">
-        <a href="{{ base_url == '' ? '/' : base_url }}" class="brand brand-color">{{ site.title }}</a>
+        <a href="{{ base_url == '' ? '/' : base_url }}" class="brand brand-color">{{ site.title|raw }}</a>
         <nav class=nav>
             <ul>
                 {% for p in grav.pages.root.children %}

@@ -20,6 +20,7 @@
 
 {% block stylesheets %}
     {% do assets.add('theme://css/main.css') %}
+    {% do assets.add('theme://css/about.css') %}
     {% for p in page.children %}
         {% if p.name == 'sliders.md' %}
             {% do assets.addCss('theme://css/owl.carousel.css') %}
@@ -29,6 +30,7 @@
     {% if browser.getBrowser == 'msie' and browser.getVersion <= 8 %}
         {% do assets.addCss('theme://css/ie.css') %}
     {% endif %}
+
 {% endblock %}
 
 {{ assets.css()|raw }}
