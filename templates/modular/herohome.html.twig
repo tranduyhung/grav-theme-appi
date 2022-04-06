@@ -8,7 +8,7 @@
     {% if page.header.video_webm or page.header.video_mp4 %}
     <div class="hero-overlay visible-lg"></div>
 
-    <video loop id="bg-video" class="fullscreen-video">
+    <video loop id="bg-video" class="fullscreen-video" muted="true">
         {% if page.header.video_webm %}
         <source src="{{ page.header.video_webm }}" type="video/webm">
         {% endif %}
