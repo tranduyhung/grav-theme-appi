@@ -24,8 +24,8 @@
                 <i class="icon {{ detail.icon }}"></i>
             </div>
             <div class="col-sm-4 col-md-3">
-                <h3 class="mb-15">{{ detail.title }}</h3>
-                <p class="smaller xs-mw">{{ detail.description }}</p>
+                <h3 class="mb-15">{{ detail.title|raw }}</h3>
+                <p class="smaller xs-mw">{{ detail.description|raw }}</p>
             </div>
         </div>
     {% endfor %}

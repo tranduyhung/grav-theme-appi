@@ -11,7 +11,7 @@
                         {{ 'ERROR'|t }} {{ page.header.http_response_code }}
                     </h1>
                     <h2 class="text-center w-300 color-dark mb-70 sm-mb-40 xs-mb-20">
-                        {{ page.content }}
+                        {{ page.content|raw }}
                     </h2>
                 </div>
             </div>

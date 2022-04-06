@@ -21,8 +21,8 @@
                 {% endif %}
                     <div class="has-icon">
                         <i class="icon {{ service.icon }}"></i>
-                        <h3 class="mb-25 md-mb-10">{{ service.title }}</h3>
-                        <p class="smaller">{{ service.description }}</p>
+                        <h3 class="mb-25 md-mb-10">{{ service.title|raw }}</h3>
+                        <p class="smaller">{{ service.description|raw }}</p>
                     </div>
                 </div>
             {% if (loop.index - 1) % 2 == 1 %}

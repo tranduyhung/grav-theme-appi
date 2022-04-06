@@ -7,9 +7,9 @@
         <div class="container">
             <div class="row">
                 <h1 class="mb-25 sm-mb-20 heading scaled color-dark heading-bordered bordered-above">
-                    {{ page.title }}
+                    {{ page.title|raw }}
                 </h1>
-                {{ page.content }}
+                {{ page.content|raw }}
             </div>
         </div>
     </div>

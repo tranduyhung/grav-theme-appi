@@ -4,7 +4,7 @@
     {% set backgroundImage = '' %}
 {% endif %}
 
-<div class="level level-hero has-hint hero-home" style="{{ backgroundImage }}">
+<div class="level level-hero has-hint hero-home" style="{{ backgroundImage|raw }}">
     {% if page.header.video_webm or page.header.video_mp4 %}
     <div class="hero-overlay visible-lg"></div>
 
